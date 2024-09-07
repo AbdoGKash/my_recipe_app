@@ -10,5 +10,5 @@ abstract class HomeApiService {
   factory HomeApiService(Dio dio) = _HomeApiService;
 
   @GET(ApiConstants.home)
-  Future<RecipeResponseModel> getRecipe();
+  Future<List<RecipeResponseModel>> getRecipe();
 }

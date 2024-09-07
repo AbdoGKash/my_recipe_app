@@ -14,14 +14,15 @@ class RecipeRepositoryImpl implements IRecipeRepository {
   RecipeRepositoryImpl(this._apiService, this._networkInfo);
 
   @override
-  Future<Either<ApiErrorModel, Recipe>> getRecipes() async {
+  Future<Either<ApiErrorModel, List<Recipe>>> getRecipes() async {
     if (await _networkInfo.isConnected) {
       try {
-        final RecipeResponseModel response = await _apiService.getRecipe();
+        final List<RecipeResponseModel> response =
+            await _apiService.getRecipe();
 
-        final Recipe recipeEntity = RecipeMapper.toEntity(response);
+        final List<Recipe> recipeEntities = RecipeMapper.toEntityList(response);
 
-        return Right(recipeEntity);
+        return Right(recipeEntities);
       } catch (error) {
         final ErrorHandler errorHandler = ErrorHandler.handle(error);
         return Left(errorHandler.apiErrorModel);
