@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_recipe_app/core/routing/routers_name.dart';
-import 'package:my_recipe_app/features/login/widget/custom_buttom.dart';
-import 'package:my_recipe_app/features/login/widget/custom_text_form_field.dart';
+import 'package:my_recipe_app/presentation/login/view/widgets/custom_buttom.dart';
+import 'package:my_recipe_app/presentation/login/view/widgets/custom_text_form_field.dart';
 
 class EmailAndPassword extends StatefulWidget {
   const EmailAndPassword({super.key});

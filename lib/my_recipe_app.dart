@@ -13,7 +13,7 @@ class MyRecipeApp extends StatelessWidget {
       minTextAdapt: true,
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: RoutersName.loginSreen,
+        initialRoute: RoutersName.homeSreen,
         onGenerateRoute: AppRouter.generateRoute,
       ),
     );

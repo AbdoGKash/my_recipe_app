@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:my_recipe_app/features/home/view/home_screen.dart';
-import 'package:my_recipe_app/features/recipe_details/view/recipe_details_screen.dart';
-import '../../features/login/view/login_screen.dart';
+import 'package:my_recipe_app/presentation/home/view/home_screen.dart';
+import 'package:my_recipe_app/presentation/recipe_details/view/recipe_details_screen.dart';
+import '../../presentation/login/view/login_screen.dart';
 import 'routers_name.dart';
 
 class AppRouter {
@@ -9,7 +9,7 @@ class AppRouter {
     switch (settings.name) {
       case RoutersName.loginSreen:
         return MaterialPageRoute(
-          builder: (_) => LoginScreen(),
+          builder: (_) => const LoginScreen(),
         );
       case RoutersName.homeSreen:
         return MaterialPageRoute(

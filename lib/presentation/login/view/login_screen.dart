@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:my_recipe_app/core/routing/routers_name.dart';
 import 'package:my_recipe_app/core/theming/text_styel.dart';
-import 'package:my_recipe_app/features/login/widget/custom_buttom.dart';
-import 'package:my_recipe_app/features/login/widget/dont_have_account_text.dart';
-import 'package:my_recipe_app/features/login/widget/email_and_password.dart';
-import 'package:my_recipe_app/features/login/widget/login_google_facebook.dart';
-import 'package:my_recipe_app/features/login/widget/terms_and_conditions_text.dart';
+import 'package:my_recipe_app/presentation/login/view/widgets/dont_have_account_text.dart';
+import 'package:my_recipe_app/presentation/login/view/widgets/email_and_password.dart';
+import 'package:my_recipe_app/presentation/login/view/widgets/login_google_facebook.dart';
+import 'package:my_recipe_app/presentation/login/view/widgets/terms_and_conditions_text.dart';
 
 class LoginScreen extends StatelessWidget {
-  LoginScreen({super.key});
+  const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
