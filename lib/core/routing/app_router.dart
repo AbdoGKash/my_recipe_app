@@ -9,7 +9,7 @@ class AppRouter {
     switch (settings.name) {
       case RoutersName.loginSreen:
         return MaterialPageRoute(
-          builder: (_) => const LoginScreen(),
+          builder: (_) => LoginScreen(),
         );
       case RoutersName.homeSreen:
         return MaterialPageRoute(
