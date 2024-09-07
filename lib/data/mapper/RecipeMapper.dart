@@ -1,5 +1,5 @@
-import 'package:my_recipe_app/data/response/recipe_response_model.dart';
 import 'package:my_recipe_app/domain/entities/recipe.dart';
+import 'package:my_recipe_app/data/response/recipe_response_model.dart';
 
 class RecipeMapper {
   static Recipe toEntity(RecipeResponseModel responseModel) {
