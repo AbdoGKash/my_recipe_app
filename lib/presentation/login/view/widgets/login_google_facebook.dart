@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_recipe_app/core/helper/app_strings.dart';
 import 'package:my_recipe_app/core/helper/images_assets.dart';
 import 'package:svg_flutter/svg.dart';
 
@@ -10,7 +11,7 @@ class LoginGoogleFacebook extends StatelessWidget {
     return Column(
       children: [
         const Align(
-            alignment: Alignment.center, child: Text("or sign up with")),
+            alignment: Alignment.center, child: Text(AppStrings.orSignUp)),
         const SizedBox(
           height: 25,
         ),

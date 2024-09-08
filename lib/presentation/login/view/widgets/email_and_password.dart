@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:my_recipe_app/core/helper/app_strings.dart';
 import 'package:my_recipe_app/core/routing/routers_name.dart';
 import 'package:my_recipe_app/presentation/login/view/widgets/custom_buttom.dart';
 import 'package:my_recipe_app/presentation/login/view/widgets/custom_text_form_field.dart';
@@ -24,10 +25,10 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
         children: [
           CustomTextFormField(
             controller: emailController,
-            hintText: 'Email',
+            hintText: AppStrings.email,
             validator: (value) {
               if (value == null || value.isEmpty || value != 'abdo@abdo.com') {
-                return 'enter email vaild';
+                return AppStrings.enterEmailVaild;
               }
               return null;
             },
@@ -37,10 +38,10 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
           ),
           CustomTextFormField(
             controller: passwordController,
-            hintText: 'Password',
+            hintText: AppStrings.password,
             validator: (value) {
               if (value == null || value.isEmpty || value != '12345') {
-                return 'enter password vaild';
+                return AppStrings.enterPasswordVaild;
               }
               return null;
             },

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:my_recipe_app/core/helper/app_strings.dart';
 import 'package:my_recipe_app/core/routing/routers_name.dart';
 import 'package:my_recipe_app/core/theming/colors.dart';
 import 'package:my_recipe_app/core/theming/text_styel.dart';
@@ -16,7 +17,7 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: Row(
           children: [
-            Text('Recipes', style: TextStyles.font25WhiteBold),
+            Text(AppStrings.recipes, style: TextStyles.font25WhiteBold),
             const Spacer(),
             IconButton(
               onPressed: () {

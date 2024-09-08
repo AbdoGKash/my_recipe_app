@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_recipe_app/core/dependency_injection/dependency_injection.dart';
+import 'package:my_recipe_app/core/helper/app_strings.dart';
 import 'package:my_recipe_app/domain/entities/recipe.dart';
 import 'package:my_recipe_app/presentation/favorite/favorite.dart';
 import 'package:my_recipe_app/presentation/home/bloc/my_recipe_bloc_bloc.dart';
@@ -37,9 +38,9 @@ class AppRouter {
         );
       default:
         return MaterialPageRoute(
-          builder: (_) => const Scaffold(
+          builder: (_) => Scaffold(
             body: Center(
-              child: Text("No Route Found"),
+              child: Text(AppStrings.noRouteFound),
             ),
           ),
         );

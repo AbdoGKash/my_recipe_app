@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_recipe_app/core/helper/app_strings.dart';
 import '../../../../core/theming/text_styel.dart';
 
 class DontHaveAccountText extends StatelessWidget {
@@ -12,9 +13,9 @@ class DontHaveAccountText extends StatelessWidget {
           textAlign: TextAlign.center,
           text: TextSpan(children: [
             TextSpan(
-                text: 'do not have an account?',
+                text: AppStrings.doNotHaveAccount,
                 style: TextStyles.font13GreykW300),
-            TextSpan(text: 'sign up', style: TextStyles.font13BlackBold)
+            TextSpan(text: AppStrings.signUp, style: TextStyles.font13BlackBold)
           ])),
     );
   }

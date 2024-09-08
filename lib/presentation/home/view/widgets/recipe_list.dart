@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:lottie/lottie.dart';
+import 'package:my_recipe_app/core/helper/app_strings.dart';
 import 'package:my_recipe_app/core/helper/images_assets.dart';
 import 'package:my_recipe_app/core/routing/routers_name.dart';
 import 'package:my_recipe_app/core/theming/colors.dart';
@@ -17,7 +18,7 @@ class RecipeList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ValueListenableBuilder(
-      valueListenable: Hive.box<RecipeModel>("Favorite").listenable(),
+      valueListenable: Hive.box<RecipeModel>(AppStrings.favorites).listenable(),
       builder: (BuildContext context, Box<RecipeModel> box, Widget? child) {
         return GridView.builder(
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -70,7 +71,7 @@ class RecipeList extends StatelessWidget {
                             await box.delete(index);
 
                             snakBar(context, ImagesAssets.deleteLottie,
-                                "recipe removed from favorites");
+                                AppStrings.recipeRemoved);
                           } else {
                             await box.put(
                                 index,
@@ -92,7 +93,7 @@ class RecipeList extends StatelessWidget {
                                   fats: recipe.fats,
                                 ));
                             snakBar(context, ImagesAssets.doneLottie,
-                                'recipe added to favorites');
+                                AppStrings.recipeAdded);
                           }
                         },
                         icon: Icon(

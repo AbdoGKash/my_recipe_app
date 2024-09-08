@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:my_recipe_app/core/helper/app_strings.dart';
 import 'package:my_recipe_app/core/theming/text_styel.dart';
 import 'package:my_recipe_app/presentation/login/view/widgets/dont_have_account_text.dart';
 import 'package:my_recipe_app/presentation/login/view/widgets/email_and_password.dart';
@@ -20,14 +21,14 @@ class LoginScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Welcome Back',
+                  AppStrings.wlcomeBack,
                   style: TextStyles.font25primaryBold,
                 ),
                 SizedBox(
                   height: 8.h,
                 ),
                 Text(
-                  'We are excited to have you back, can\'t wait to see what you\'ve been up to since you last logged in.',
+                  AppStrings.welcomeDescription,
                   style: TextStyles.font14Gray200,
                 ),
                 SizedBox(

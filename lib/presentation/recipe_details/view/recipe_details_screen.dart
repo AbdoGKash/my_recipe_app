@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:my_recipe_app/core/helper/app_strings.dart';
+import 'package:my_recipe_app/core/theming/colors.dart';
 import 'package:my_recipe_app/domain/entities/recipe.dart';
 
 class RecipeDetailScreen extends StatelessWidget {
   final Recipe recipe;
 
-  RecipeDetailScreen({required this.recipe});
+  const RecipeDetailScreen({super.key, required this.recipe});
 
   @override
   Widget build(BuildContext context) {
@@ -12,12 +14,12 @@ class RecipeDetailScreen extends StatelessWidget {
       length: 3,
       child: Scaffold(
         appBar: AppBar(
-          title: Text(recipe.name ?? 'Recipe Details'),
-          backgroundColor: Colors.deepOrange,
+          title: Text(recipe.name ?? AppStrings.recipeDetails),
+          backgroundColor: ColorsManager.primary,
           bottom: const TabBar(
             tabs: [
-              Tab(text: 'Overview'),
-              Tab(text: 'Ingredients'),
+              Tab(text: AppStrings.overview),
+              Tab(text: AppStrings.ingredients),
               Tab(text: 'Deliverables'),
             ],
           ),
@@ -35,7 +37,7 @@ class RecipeDetailScreen extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.all(16.0),
                     child: Text(
-                      recipe.name ?? 'Unknown Recipe',
+                      recipe.name ?? AppStrings.unknownRecipe,
                       style: const TextStyle(
                           fontSize: 24, fontWeight: FontWeight.bold),
                     ),
@@ -43,19 +45,19 @@ class RecipeDetailScreen extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16.0),
                     child: Text(
-                      recipe.description ?? 'No description available.',
+                      recipe.description ?? AppStrings.noDescription,
                       style: const TextStyle(fontSize: 16),
                     ),
                   ),
-                  _buildDetailSection('Time', recipe.time),
-                  _buildDetailSection('Calories', recipe.calories),
-                  _buildDetailSection('Carbs', recipe.carbos),
-                  _buildDetailSection('Proteins', recipe.proteins),
-                  _buildDetailSection('Fats', recipe.fats),
+                  _buildDetailSection(AppStrings.time, recipe.time),
+                  _buildDetailSection(AppStrings.calories, recipe.calories),
+                  _buildDetailSection(AppStrings.carbs, recipe.carbos),
+                  _buildDetailSection(AppStrings.proteins, recipe.proteins),
+                  _buildDetailSection(AppStrings.fats, recipe.fats),
                   _buildDetailSection(
-                      'Difficulty', recipe.difficulty?.toString()),
-                  _buildDetailSection('Country', recipe.country),
-                  _buildDetailSection('Headline', recipe.headline),
+                      AppStrings.difficulty, recipe.difficulty?.toString()),
+                  _buildDetailSection(AppStrings.country, recipe.country),
+                  _buildDetailSection(AppStrings.headline, recipe.headline),
                 ],
               ),
             ),
@@ -66,7 +68,7 @@ class RecipeDetailScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Text(
-                    'Ingredients:',
+                    AppStrings.ingredients,
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
                   ...?recipe.ingredients?.map((ingredient) => Padding(
@@ -113,7 +115,7 @@ class RecipeDetailScreen extends StatelessWidget {
             style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
           ),
           Text(
-            value ?? 'N/A',
+            value.toString(),
             style: const TextStyle(fontSize: 16),
           ),
         ],

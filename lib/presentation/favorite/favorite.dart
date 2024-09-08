@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:my_recipe_app/core/helper/app_strings.dart';
 import 'package:my_recipe_app/core/helper/images_assets.dart';
 import 'package:my_recipe_app/core/theming/colors.dart';
 import 'package:my_recipe_app/core/theming/text_styel.dart';
@@ -19,12 +20,13 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Favorites', style: TextStyles.font25WhiteBold),
+        title: Text(AppStrings.favorites, style: TextStyles.font25WhiteBold),
         centerTitle: true,
         backgroundColor: ColorsManager.primary,
       ),
       body: ValueListenableBuilder(
-        valueListenable: Hive.box<RecipeModel>('Favorite').listenable(),
+        valueListenable:
+            Hive.box<RecipeModel>(AppStrings.favorites).listenable(),
         builder: (context, box, child) {
           final keys = box.keys.toList();
           return GridView.builder(
@@ -52,7 +54,7 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                         topRight: Radius.circular(15.0),
                       ),
                       child: Image.network(
-                        favoriteItem!.image ?? '',
+                        favoriteItem!.image.toString(),
                         height: 120,
                         width: double.infinity,
                         fit: BoxFit.cover,
@@ -64,11 +66,11 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                       onPressed: () async {
                         await box.delete(key);
                         snakBar(context, ImagesAssets.deleteLottie,
-                            "recipe removed from favorites");
+                            AppStrings.recipeRemoved);
                       },
-                      icon: const Icon(
+                      icon: Icon(
                         Icons.delete,
-                        color: Colors.white,
+                        color: ColorsManager.white,
                       ),
                     ),
                     // Title and Description
@@ -83,7 +85,7 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                           style: TextStyle(
                             fontSize: 14.sp,
                             fontWeight: FontWeight.bold,
-                            color: Colors.grey,
+                            color: ColorsManager.grey,
                           ),
                         ),
                       ),

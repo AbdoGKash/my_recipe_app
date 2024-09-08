@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:my_recipe_app/core/helper/app_strings.dart';
 import 'package:my_recipe_app/core/theming/colors.dart';
 import 'package:my_recipe_app/core/theming/text_styel.dart';
 
@@ -23,7 +24,7 @@ class CustomButtom extends StatelessWidget {
         onPressed: onPressed,
         color: ColorsManager.primary,
         child: Text(
-          "Login",
+          AppStrings.login,
           style: TextStyles.font20WhiteBold,
         ),
       ),

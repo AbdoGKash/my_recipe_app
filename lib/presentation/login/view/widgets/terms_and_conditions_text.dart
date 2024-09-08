@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_recipe_app/core/helper/app_strings.dart';
 import '../../../../core/theming/text_styel.dart';
 
 class TermsAndConditionsText extends StatelessWidget {
@@ -10,15 +11,17 @@ class TermsAndConditionsText extends StatelessWidget {
         textAlign: TextAlign.center,
         text: TextSpan(children: [
           TextSpan(
-              text: "By logging, you agree to our ",
+              text: AppStrings.byLoggingYouAgreeToYou,
               style: TextStyles.font13GreykW300),
           TextSpan(
-              text: ' Terms & Conditions                  ',
+              text: AppStrings.termsConditions,
               style: TextStyles.font13BlackBold),
           TextSpan(
-              text: 'and',
+              text: AppStrings.and,
               style: TextStyles.font13GreykW300.copyWith(height: 1.5)),
-          TextSpan(text: ' Privacy Policy', style: TextStyles.font13BlackBold),
+          TextSpan(
+              text: AppStrings.privacyPolicy,
+              style: TextStyles.font13BlackBold),
         ]));
   }
 }
