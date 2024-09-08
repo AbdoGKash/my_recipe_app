@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_recipe_app/core/theming/colors.dart';
 import 'package:my_recipe_app/core/theming/text_styel.dart';
 import 'package:my_recipe_app/presentation/home/bloc/my_recipe_bloc_bloc.dart';
+import 'package:my_recipe_app/presentation/home/view/widgets/recipe_list.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -21,11 +22,14 @@ class HomeScreen extends StatelessWidget {
           if (state is MyRecipeBlocLoading) {
             return const Center(child: CircularProgressIndicator());
           } else if (state is MyRecipeBlocLoaded) {
-            print(state.recipes.length);
             return Padding(
               padding: const EdgeInsets.fromLTRB(10, 10, 10, 20).w,
-              child: Center(child: Text("${state.recipes.length}")),
+              child: RecipeGridScreen(
+                recipes: state.recipes,
+              ),
             );
+          } else if (state is MyRecipeBlocError) {
+            return Center(child: Text(state.message));
           }
           return Container();
         },

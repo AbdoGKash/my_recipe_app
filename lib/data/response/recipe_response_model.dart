@@ -11,9 +11,9 @@ class RecipeResponseModel {
   List<String>? weeks;
   String? carbos;
   String? fibers;
-  String? rating;
+  int? rating;
   String? country;
-  String? ratings;
+  int? ratings;
   String? calories;
   String? headline;
   List<String>? keywords;
@@ -32,7 +32,7 @@ class RecipeResponseModel {
   @JsonKey(
       name:
           'undeliverable_ingredients') // Because there is a difference between the naming method in dart and api
-  List<String>? undeliverableIngredients;
+  List? undeliverableIngredients;
 
   RecipeResponseModel(
       {this.id,

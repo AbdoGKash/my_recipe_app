@@ -17,9 +17,9 @@ RecipeResponseModel _$RecipeResponseModelFromJson(Map<String, dynamic> json) =>
           (json['weeks'] as List<dynamic>?)?.map((e) => e as String).toList(),
       carbos: json['carbos'] as String?,
       fibers: json['fibers'] as String?,
-      rating: json['rating'] as String?,
+      rating: (json['rating'] as num?)?.toInt(),
       country: json['country'] as String?,
-      ratings: json['ratings'] as String?,
+      ratings: (json['ratings'] as num?)?.toInt(),
       calories: json['calories'] as String?,
       headline: json['headline'] as String?,
       keywords: (json['keywords'] as List<dynamic>?)
@@ -42,9 +42,7 @@ RecipeResponseModel _$RecipeResponseModelFromJson(Map<String, dynamic> json) =>
               ?.map((e) => e as String)
               .toList(),
       undeliverableIngredients:
-          (json['undeliverable_ingredients'] as List<dynamic>?)
-              ?.map((e) => e as String)
-              .toList(),
+          json['undeliverable_ingredients'] as List<dynamic>?,
     );
 
 Map<String, dynamic> _$RecipeResponseModelToJson(

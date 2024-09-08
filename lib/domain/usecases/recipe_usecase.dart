@@ -6,7 +6,7 @@ import 'package:my_recipe_app/domain/repositories/recipr_repository.dart';
 class RecipeUsecase {
   final IRecipeRepository _recipeRepository;
   RecipeUsecase(this._recipeRepository);
-  Future<Either<ApiErrorModel, List<Recipe>>> getRecipes() {
-    return _recipeRepository.getRecipes();
+  Future<Either<ApiErrorModel, List<Recipe>>> getRecipes() async {
+    return await _recipeRepository.getRecipes();
   }
 }
