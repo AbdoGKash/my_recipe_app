@@ -17,6 +17,16 @@ class HomeScreen extends StatelessWidget {
         title: Row(
           children: [
             Text('Recipes', style: TextStyles.font25WhiteBold),
+            const Spacer(),
+            IconButton(
+              onPressed: () {
+                Navigator.pushNamed(context, RoutersName.favoriteSreen);
+              },
+              icon: Icon(
+                Icons.favorite,
+                color: ColorsManager.white,
+              ),
+            )
           ],
         ),
         centerTitle: true,
@@ -29,7 +39,7 @@ class HomeScreen extends StatelessWidget {
           } else if (state is MyRecipeBlocLoaded) {
             return Padding(
               padding: const EdgeInsets.fromLTRB(10, 10, 10, 20).w,
-              child: RecipeGridScreen(
+              child: RecipeList(
                 recipes: state.recipes,
               ),
             );

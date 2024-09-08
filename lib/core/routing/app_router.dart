@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_recipe_app/core/dependency_injection/dependency_injection.dart';
 import 'package:my_recipe_app/domain/entities/recipe.dart';
+import 'package:my_recipe_app/presentation/favorite/favorite.dart';
 import 'package:my_recipe_app/presentation/home/bloc/my_recipe_bloc_bloc.dart';
 import 'package:my_recipe_app/presentation/home/view/home_screen.dart';
 import 'package:my_recipe_app/presentation/recipe_details/view/recipe_details_screen.dart';
@@ -29,6 +30,10 @@ class AppRouter {
           builder: (_) => RecipeDetailScreen(
             recipe: recipe,
           ),
+        );
+      case RoutersName.favoriteSreen:
+        return MaterialPageRoute(
+          builder: (_) => const FavoritesScreen(),
         );
       default:
         return MaterialPageRoute(

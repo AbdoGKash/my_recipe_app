@@ -9,10 +9,10 @@ import 'package:my_recipe_app/core/theming/text_styel.dart';
 import 'package:my_recipe_app/domain/entities/recipe.dart';
 import 'package:my_recipe_app/domain/entities/recipe_favorite.dart';
 
-class RecipeGridScreen extends StatelessWidget {
+class RecipeList extends StatelessWidget {
   final List<Recipe> recipes;
 
-  const RecipeGridScreen({super.key, required this.recipes});
+  const RecipeList({super.key, required this.recipes});
 
   @override
   Widget build(BuildContext context) {
