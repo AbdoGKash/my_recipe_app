@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:my_recipe_app/core/routing/routers_name.dart';
 import 'package:my_recipe_app/domain/entities/recipe.dart';
 
 class RecipeGridScreen extends StatelessWidget {
@@ -21,7 +22,13 @@ class RecipeGridScreen extends StatelessWidget {
         itemBuilder: (context, index) {
           final recipe = recipes[index];
           return GestureDetector(
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(
+                context,
+                RoutersName.recipeDetilsScreen,
+                arguments: recipe,
+              );
+            },
             child: Card(
               elevation: 5,
               shape: RoundedRectangleBorder(
