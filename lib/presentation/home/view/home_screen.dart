@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:my_recipe_app/core/routing/routers_name.dart';
 import 'package:my_recipe_app/core/theming/colors.dart';
 import 'package:my_recipe_app/core/theming/text_styel.dart';
 import 'package:my_recipe_app/presentation/home/bloc/my_recipe_bloc_bloc.dart';
@@ -13,7 +14,11 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Recipes', style: TextStyles.font25WhiteBold),
+        title: Row(
+          children: [
+            Text('Recipes', style: TextStyles.font25WhiteBold),
+          ],
+        ),
         centerTitle: true,
         backgroundColor: ColorsManager.primary,
       ),

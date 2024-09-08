@@ -56,6 +56,8 @@ dependencies:
   svg_flutter: ^0.0.1
   dartz: ^0.10.1
   internet_connection_checker: ^2.0.0
+  hive_flutter: ^1.1.0
+  lottie: ^3.1.2
 
 dev_dependencies:
   flutter_test:
@@ -83,6 +85,8 @@ flutter:
   assets:
     - assets/svgs/facebookicon.svg
     - assets/svgs/googleicon.svg
+    - assets/lottie/delete.json
+    - assets/lottie/done.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
