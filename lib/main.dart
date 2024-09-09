@@ -13,3 +13,7 @@ void main() async {
   await Hive.openBox<RecipeModel>(AppStrings.favorites);
   runApp(const MyRecipeApp());
 }
+
+
+// Email  : abdo@abdo.com
+// Password : 12345

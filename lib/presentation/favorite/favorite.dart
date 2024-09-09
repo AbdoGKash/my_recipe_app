@@ -71,7 +71,7 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                       },
                       icon: Icon(
                         Icons.delete,
-                        color: ColorsManager.red,
+                        color: ColorsManager.white,
                       ),
                     ),
                     // Title and Description

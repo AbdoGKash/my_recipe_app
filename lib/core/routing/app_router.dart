@@ -19,11 +19,7 @@ class AppRouter {
         );
       case RoutersName.homeSreen:
         return MaterialPageRoute(
-          builder: (_) => BlocProvider(
-            create: (context) =>
-                getIt<MyRecipeBlocBloc>()..add(GetMyRecipesEvent()),
-            child: const HomeScreen(),
-          ),
+          builder: (_) => const HomeScreen(),
         );
       case RoutersName.recipeDetilsScreen:
         final recipe = settings.arguments as Recipe;

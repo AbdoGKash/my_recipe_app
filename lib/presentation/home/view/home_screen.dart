@@ -18,20 +18,14 @@ class HomeScreen extends StatelessWidget {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            // SizedBox(
-            //   width: 120.w,
-            // ),
             Text(AppStrings.recipes, style: TextStyles.font25WhiteBold),
-            // SizedBox(
-            //   width: 80.w,
-            // ),
             IconButton(
               onPressed: () {
                 Navigator.pushNamed(context, RoutersName.favoriteSreen);
               },
               icon: Icon(
                 Icons.favorite,
-                color: ColorsManager.red,
+                color: ColorsManager.white,
               ),
             )
           ],

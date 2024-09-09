@@ -100,7 +100,7 @@ class RecipeList extends StatelessWidget {
                             isFavorite
                                 ? Icons.favorite
                                 : Icons.favorite_outline,
-                            color: ColorsManager.red),
+                            color: ColorsManager.white),
                       ),
                     ),
 
