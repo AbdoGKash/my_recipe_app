@@ -6,6 +6,7 @@ The Recipe App is a simple application where users can log in with their email a
 # 🔧 Overview:
 
 * **Built with Dart & Flutter Framework with clean architecture and clean code**<br>
+* **Email and Passwoard to login :** email : abdo@abdo.com , pass : 12345
 * **State Management :** [Bloc](https://pub.dev/packages/bloc) | [Flutter Bloc](https://pub.dev/packages/flutter_bloc)
 * **Api Integration :** [Dio](https://pub.dev/packages/dio) | [Retrofit](https://pub.dev/packages/retrofit) | [Retrofit Generator](https://pub.dev/packages/retrofit_generator)| [pretty_dio_logger](https://pub.dev/packages/pretty_dio_logger)<br>
 * **Code Generation and Serialization :** [json_annotation](https://pub.dev/packages/json_annotation) | [json_serializable](https://pub.dev/packages/json_serializable) | [build_runner](https://pub.dev/packages/build_runner)<br>
@@ -14,6 +15,7 @@ The Recipe App is a simple application where users can log in with their email a
 * **responsive app :** [flutter_screenutil](https://pub.dev/packages/flutter_screenutil)<br>
 * **Images and Animation Images :** [lottie](https://pub.dev/packages/lottie) | [flutter_svg](https://pub.dev/packages/flutter_svg)<br>
 * **Functional Programming and Error Management :** [dartz](https://pub.dev/packages/dartz/versions)
+
 
 
 # ✨ Features
