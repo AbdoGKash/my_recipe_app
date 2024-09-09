@@ -36,7 +36,8 @@ The Recipe App is a simple application where users can log in with their email a
 <img src="https://github.com/user-attachments/assets/9bb1f53d-6f97-47b1-a460-7b65887ac91e" width="200">
 <img src="https://github.com/user-attachments/assets/26947e9d-aa72-45de-9fab-8505f5ef79b0" width="200">
 <img src="https://github.com/user-attachments/assets/8c97a73d-ca57-4312-9902-87784445ab72" width="200">
-<img src="https://github.com/user-attachments/assets/a9d0b5ef-8d69-4585-a110-77a988df761c)" width="200">
+<img src="https://github.com/user-attachments/assets/a9d0b5ef-8d69-4585-a110-77a988df761c" width="200">
+
 
 ### Home Screen
 
