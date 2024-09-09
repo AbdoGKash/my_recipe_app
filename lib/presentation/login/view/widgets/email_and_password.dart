@@ -33,8 +33,8 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
               return null;
             },
           ),
-          const SizedBox(
-            height: 20,
+          SizedBox(
+            height: 20.h,
           ),
           CustomTextFormField(
             controller: passwordController,

@@ -54,7 +54,7 @@ class RecipeList extends StatelessWidget {
                       ),
                       child: Image.network(
                         recipe.image ?? '',
-                        height: 120,
+                        height: 120.h,
                         width: double.infinity,
                         fit: BoxFit.cover,
                       ),
@@ -100,7 +100,7 @@ class RecipeList extends StatelessWidget {
                             isFavorite
                                 ? Icons.favorite
                                 : Icons.favorite_outline,
-                            color: ColorsManager.white),
+                            color: ColorsManager.red),
                       ),
                     ),
 
@@ -113,11 +113,7 @@ class RecipeList extends StatelessWidget {
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
                           "${recipe.name}  ${recipe.calories}",
-                          style: TextStyle(
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.grey,
-                          ),
+                          style: TextStyles.font14GrayBold,
                         ),
                       ),
                     ),
@@ -142,8 +138,8 @@ snakBar(BuildContext context, String imageName, String text) {
           style: TextStyles.font16WhiteSemiBold,
         ),
         SizedBox(
-          height: 30,
-          width: 30,
+          height: 30.h,
+          width: 30.w,
           child: Lottie.asset(imageName),
         )
       ],

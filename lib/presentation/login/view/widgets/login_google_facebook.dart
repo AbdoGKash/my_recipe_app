@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_recipe_app/core/helper/app_strings.dart';
 import 'package:my_recipe_app/core/helper/images_assets.dart';
 import 'package:svg_flutter/svg.dart';
@@ -12,15 +13,15 @@ class LoginGoogleFacebook extends StatelessWidget {
       children: [
         const Align(
             alignment: Alignment.center, child: Text(AppStrings.orSignUp)),
-        const SizedBox(
-          height: 25,
+        SizedBox(
+          height: 25.h,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SvgPicture.asset(ImagesAssets.googleSvg),
-            const SizedBox(
-              width: 20,
+            SizedBox(
+              width: 20.w,
             ),
             SvgPicture.asset(ImagesAssets.facebookSvg)
           ],

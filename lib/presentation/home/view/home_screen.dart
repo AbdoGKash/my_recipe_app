@@ -16,22 +16,30 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
+            // SizedBox(
+            //   width: 120.w,
+            // ),
             Text(AppStrings.recipes, style: TextStyles.font25WhiteBold),
-            const Spacer(),
+            // SizedBox(
+            //   width: 80.w,
+            // ),
             IconButton(
               onPressed: () {
                 Navigator.pushNamed(context, RoutersName.favoriteSreen);
               },
               icon: Icon(
                 Icons.favorite,
-                color: ColorsManager.white,
+                color: ColorsManager.red,
               ),
             )
           ],
         ),
+        automaticallyImplyLeading: false,
         centerTitle: true,
         backgroundColor: ColorsManager.primary,
+        iconTheme: IconThemeData(color: ColorsManager.white),
       ),
       body: BlocBuilder<MyRecipeBlocBloc, MyRecipeBlocState>(
         builder: (context, state) {

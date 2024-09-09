@@ -9,11 +9,11 @@ class MyRecipeApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const ScreenUtilInit(
-      designSize: Size(393, 852), // form design
+      designSize: Size(393, 852),
       minTextAdapt: true,
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: RoutersName.homeSreen,
+        initialRoute: RoutersName.loginSreen,
         onGenerateRoute: AppRouter.generateRoute,
       ),
     );

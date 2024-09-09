@@ -23,6 +23,7 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
         title: Text(AppStrings.favorites, style: TextStyles.font25WhiteBold),
         centerTitle: true,
         backgroundColor: ColorsManager.primary,
+        iconTheme: IconThemeData(color: ColorsManager.white),
       ),
       body: ValueListenableBuilder(
         valueListenable:
@@ -55,7 +56,7 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                       ),
                       child: Image.network(
                         favoriteItem!.image.toString(),
-                        height: 120,
+                        height: 120.h,
                         width: double.infinity,
                         fit: BoxFit.cover,
                       ),
@@ -70,7 +71,7 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                       },
                       icon: Icon(
                         Icons.delete,
-                        color: ColorsManager.white,
+                        color: ColorsManager.red,
                       ),
                     ),
                     // Title and Description
@@ -79,14 +80,10 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                       left: 0,
                       right: 0,
                       child: Container(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.all(8.0).w,
                         child: Text(
                           "${favoriteItem.name}  ${favoriteItem.calories}",
-                          style: TextStyle(
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.bold,
-                            color: ColorsManager.grey,
-                          ),
+                          style: TextStyles.font14GrayBold,
                         ),
                       ),
                     ),

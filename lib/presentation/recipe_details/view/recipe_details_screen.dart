@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_recipe_app/core/helper/app_strings.dart';
 import 'package:my_recipe_app/core/theming/colors.dart';
+import 'package:my_recipe_app/core/theming/text_styel.dart';
 import 'package:my_recipe_app/domain/entities/recipe.dart';
 
 class RecipeDetailScreen extends StatelessWidget {
@@ -20,7 +22,7 @@ class RecipeDetailScreen extends StatelessWidget {
             tabs: [
               Tab(text: AppStrings.overview),
               Tab(text: AppStrings.ingredients),
-              Tab(text: 'Deliverables'),
+              Tab(text: AppStrings.deliverables),
             ],
           ),
         ),
@@ -35,18 +37,14 @@ class RecipeDetailScreen extends StatelessWidget {
                       ? Image.network(recipe.image!, fit: BoxFit.cover)
                       : Container(),
                   Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Text(
-                      recipe.name ?? AppStrings.unknownRecipe,
-                      style: const TextStyle(
-                          fontSize: 24, fontWeight: FontWeight.bold),
-                    ),
-                  ),
+                      padding: const EdgeInsets.all(16.0).w,
+                      child: Text(recipe.name ?? AppStrings.unknownRecipe,
+                          style: TextStyles.font25GreyBold)),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                    padding: const EdgeInsets.symmetric(horizontal: 16.0).w,
                     child: Text(
                       recipe.description ?? AppStrings.noDescription,
-                      style: const TextStyle(fontSize: 16),
+                      style: TextStyle(fontSize: 16.sp),
                     ),
                   ),
                   _buildDetailSection(AppStrings.time, recipe.time),
@@ -63,18 +61,19 @@ class RecipeDetailScreen extends StatelessWidget {
             ),
             // Ingredients Tab
             Padding(
-              padding: const EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(16.0).w,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
+                  Text(
                     AppStrings.ingredients,
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    style:
+                        TextStyle(fontSize: 18.sp, fontWeight: FontWeight.bold),
                   ),
                   ...?recipe.ingredients?.map((ingredient) => Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 4.0),
+                        padding: const EdgeInsets.symmetric(vertical: 4.0).w,
                         child: Text('• $ingredient',
-                            style: const TextStyle(fontSize: 16)),
+                            style: TextStyle(fontSize: 16.sp)),
                       )),
                 ],
               ),
@@ -85,15 +84,16 @@ class RecipeDetailScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    'Deliverable Ingredients:',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  Text(
+                    AppStrings.deliverableIngredients,
+                    style:
+                        TextStyle(fontSize: 18.sp, fontWeight: FontWeight.bold),
                   ),
                   ...?recipe.deliverableIngredients
                       ?.map((ingredient) => Padding(
                             padding: const EdgeInsets.symmetric(vertical: 4.0),
                             child: Text('• $ingredient',
-                                style: const TextStyle(fontSize: 16)),
+                                style: TextStyle(fontSize: 16.sp)),
                           )),
                 ],
               ),
@@ -106,17 +106,19 @@ class RecipeDetailScreen extends StatelessWidget {
 
   Widget _buildDetailSection(String title, String? value) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+      padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0).w,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
             title,
-            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold),
           ),
           Text(
             value.toString(),
-            style: const TextStyle(fontSize: 16),
+            style: value == recipe.headline
+                ? TextStyle(fontSize: 12.sp)
+                : TextStyle(fontSize: 16.sp),
           ),
         ],
       ),

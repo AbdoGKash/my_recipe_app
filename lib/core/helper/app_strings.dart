@@ -42,4 +42,8 @@ class AppStrings {
   static const String country = 'Country';
 
   static const String headline = 'Headline';
+
+  static const String deliverables = 'Deliverables';
+
+  static const String deliverableIngredients = 'Deliverable Ingredients:';
 }
